@@ -1,5 +1,148 @@
-html {
-    color: white;
-    background-color: darkslategray;
-    font-family: monospace;
-}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #1e1e1e;
+      --bg2:     #2a2a2a;
+      --border:  #3a3a3a;
+      --dim:     #888;
+      --text:    #e8e8e8;
+      --accent:  #7ec8e3;
+      --max:     680px;
+    }
+
+    html {
+      font-family: monospace;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    body {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* HEADER */
+    header { margin-bottom: 3rem; }
+
+    .prompt {
+      color: var(--dim);
+      font-size: 13px;
+      margin-bottom: 0.5rem;
+    }
+
+    .prompt span { color: var(--accent); }
+
+    h1 {
+      font-size: 1.4rem;
+      font-weight: normal;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .bio {
+      color: var(--dim);
+      max-width: 520px;
+      margin-bottom: 1.5rem;
+    }
+
+    .links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+
+    .links a::before { content: '-> '; }
+
+    /* SECTION */
+    section { margin-bottom: 3rem; }
+
+    .section-heading {
+      color: var(--dim);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* PROJECTS */
+    .project { margin-bottom: 1.75rem; }
+
+    .project-title {
+      font-size: 15px;
+      margin-bottom: 0.2rem;
+    }
+
+    .project-title a { color: var(--text); }
+    .project-title a:hover { color: var(--accent); }
+
+    .project-lang {
+      font-size: 12px;
+      color: var(--dim);
+      margin-left: 0.6rem;
+    }
+
+    .project-desc {
+      color: var(--dim);
+      font-size: 13px;
+    }
+
+    /* EDUCATION */
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .edu-name { font-size: 14px; }
+    .edu-sub  { font-size: 13px; color: var(--dim); }
+    .edu-date { font-size: 13px; color: var(--dim); white-space: nowrap; }
+
+    /* SKILLS */
+    .skills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .skill {
+      font-size: 12px;
+      padding: 3px 10px;
+      border: 1px solid var(--border);
+      color: var(--dim);
+    }
+
+    /* WRITING */
+    .post {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .post:first-child { border-top: 1px solid var(--border); }
+    .post-date { font-size: 12px; color: var(--dim); white-space: nowrap; }
+
+    /* FOOTER */
+    footer {
+      margin-top: 4rem;
+      font-size: 12px;
+      color: var(--border);
+    }
+
+    @media (max-width: 500px) {
+      body { padding: 2rem 1rem 4rem; }
+      h1 { font-size: 1.15rem; }
+    }
